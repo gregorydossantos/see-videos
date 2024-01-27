@@ -23,6 +23,6 @@ public class VideoRequest {
     private String url;
 
     @NotNull
-    @NotBlank
     private Date publicationDate;
+
 }

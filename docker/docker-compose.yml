@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  local-postgres-compose:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "admin"
+      MONGO_INITDB_ROOT_PASSWORD: "123"
+      MONGO_INITDB_DATABASE: "db_see-videos"
+    ports:
+      - "27017:27017"
+    volumes:
+      - /home/greg/Development/docker/mongo:/var/lib/mongo/data
+    networks:
+      - mongo-compose-network
+
+networks:
+  mongo-compose-network:
+    driver: bridge
