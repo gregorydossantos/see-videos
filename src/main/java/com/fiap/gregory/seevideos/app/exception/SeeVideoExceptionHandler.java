@@ -1,6 +1,7 @@
 package com.fiap.gregory.seevideos.app.exception;
 
 import com.fiap.gregory.seevideos.domain.exception.BadRequestException;
+import com.fiap.gregory.seevideos.domain.exception.DataNotFoundOrEmptyException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,6 +15,12 @@ public class SeeVideoExceptionHandler {
 
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<StandardError> badRequestException(BadRequestException ex) {
+        StandardError error = new StandardError(LocalDateTime.now(), BAD_REQUEST.value(), ex.getMessage());
+        return ResponseEntity.status(BAD_REQUEST).body(error);
+    }
+
+    @ExceptionHandler(DataNotFoundOrEmptyException.class)
+    public ResponseEntity<StandardError> dataNotFoundException(DataNotFoundOrEmptyException ex) {
         StandardError error = new StandardError(LocalDateTime.now(), BAD_REQUEST.value(), ex.getMessage());
         return ResponseEntity.status(BAD_REQUEST).body(error);
     }

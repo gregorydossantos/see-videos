@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  local-postgres-compose:
+  local-mongo-compose:
     image: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: "admin"
