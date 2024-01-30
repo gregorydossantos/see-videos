@@ -1,4 +1,4 @@
 spring:
   data:
     mongodb:
-      uri: "mongodb://localhost:27017/db_see-videos"
+      uri: "mongodb://admin:123@localhost:27017/db_see-videos?authSource=admin&retryWrites=true&w=majority"
