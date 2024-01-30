@@ -86,6 +86,7 @@
 						<exclude>**/app/config/*</exclude>
 						<exclude>**/app/request/*</exclude>
 						<exclude>**/domain/exception/*</exclude>
+						<exclude>**/domain/service/*</exclude>
 						<exclude>**/domain/useful/*</exclude>
 						<exclude>**/infra/db/model/*</exclude>
 						<exclude>**/infra/db/repository/*</exclude>

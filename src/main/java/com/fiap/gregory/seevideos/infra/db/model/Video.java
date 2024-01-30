@@ -9,7 +9,7 @@ import java.util.Date;
 
 @Data
 @Builder
-@Document(collation = "videos")
+@Document(collection = "videos")
 public class Video {
 
     @Id
